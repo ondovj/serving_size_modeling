@@ -32,7 +32,7 @@ The last step was to perfrom the modeling, which utilized several different regr
 
 ## Conclusions
 
-Utilizing a neural network gave use the best results overall. It was able to increase the R<sup>2</sup> score above 90%, and still limit variance to less than 2%. It was also able to minimize MSE fra better than the other models that were made. However, this model was still not perfect, and was subject to significant underpredcition as the true serving size increased. 
+Utilizing a neural network gave use the best results overall. It was able to increase the testing R<sup>2</sup> score above 90, which was only 2% below the training set. It was also able to minimize MSE fra better than the other models that were made. However, this model was still not perfect, and was subject to significant underpredcition as the true serving size increased. 
 
 As discussed above, this may be influence by factors unseen by the model, such as the percentage of the food item that is not typically eaten. In addition, this model only takes certain attributes into account, and there are many other factors that can have an impact on serving size, such as package size, sale price, or targeted demographic. Many of these factors can be proprietary information to the manufacturing company, and are unavailable to the public, making a deeper analysis difficult. This could, however, be adapted within a specific company to account for some of these features, or to be trained on a more specific set of foods products.
 
