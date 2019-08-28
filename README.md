@@ -9,7 +9,7 @@ This project will attempt to compare a wide variety of food products and their n
 
 ## Data
 
-The data being used in the project is the USDA Branded Food Products Database, located at https://data.nal.usda.gov/dataset/usda-branded-food-products-database. It contains over 260,000 branded foods, with their ingredients, nutrition information, and many more aspects of those foods. The original data descriptions can be found in the datasets folder of this repository. The final table as compiled in this project contains the following fields:
+The data being used in the project is the USDA Branded Food Products Database<sup>1</sup>. It contains over 260,000 branded foods, with their ingredients, nutrition information, and many more aspects of those foods. The original data descriptions can be found in the datasets folder of this repository. The final table as compiled in this project contains the following fields:
 
 |Category|Description|Example|
 |---|---|---|
@@ -37,7 +37,7 @@ The first step in this project was to retrieve the desired data. The USDA hosts 
 
 After some initial analysis, there were two types of serving size, and one subset of the data was isolated, so the remainder of the project was performed only on foods that have serving sizes in grams.
 
-The next step was to properly clean the data, which was the bulk of the work in this project. Despite having legal standards for labeling practices, there is still much variation between food labels, and many nutrition declarations can be optional in certain cases, leading to many null values in the data. Utilizing the FDA guidelines, and the contextual information of the foods, much of the missing data was able to be imputed.
+The next step was to properly clean the data, which was the bulk of the work in this project. Despite having legal standards for labeling practices, there is still much variation between food labels, and many nutrition declarations can be optional in certain cases, leading to many null values in the data. Utilizing the FDA guidelines, and the contextual information of the foods, much of the missing data was able to be imputed<sup>4<sup>.
 
 After the cleaning, additional EDA was performed to determine some of the possible connections between the nutrition features and the serving size target.
 
@@ -45,7 +45,7 @@ The last step was to perform the modeling, which utilized several different regr
 
 ## Conclusions
 
-Utilizing a feed forward neural network gave use the best results overall. It was able to increase the R<sup>2</sup> and adjusted R<sup>2</sup> score above 80%, and still limit difference between the train and test sets to below 1.5%. It was also able to minimize MSE and RMSE far better than the other models that were made. However, this model was still not perfect, and there are still outliers in the residuals. Unfortunately, utilizing a neural network does not give us any kind of further interpretability beyond the metrics that were tested. Unlike the linear models, we do not have clear coefficients that can be related back to specific features in terms of importance.
+Utilizing a feed forward neural network gave us the best results overall. This model utilized three hidden layers with 256, 128, and 64 nodes. Each hidden layer used a ReLU activation with an L2 regularization rate of 0.001, while the output layer used the identity function. The model was able to increase the R<sup>2</sup> and adjusted R<sup>2</sup> score above 80%, and still limit difference between the train and test sets to below 1.5%. It was also able to minimize MSE and RMSE far better than the other models that were made. However, this model was still not perfect, and there are still outliers in the residuals. Unfortunately, utilizing a neural network does not give us any kind of further interpretability beyond the metrics that were tested. Unlike the linear models, we do not have clear coefficients that can be related back to specific features in terms of importance.
 
 As discussed above, this may be influenced by factors unseen by the model, such as the percentage of the food item that is not typically eaten. In addition, this model only takes certain attributes into account, and there are many other factors that can have an impact on serving size, such as package size, sale price, or targeted demographic. Many of these factors can be proprietary information to the manufacturing company, and are unavailable to the public, making a deeper analysis difficult. This could, however, be adapted within a specific company to account for some of these features, or to be trained on a more specific set of food products.
 
@@ -64,3 +64,21 @@ Another modeling option could be to use a support vector machine (SVM), as this 
 Overall, the computational issues in this project could possibly be overcome by utilizing cloud computing services, such as those available on Amazon Web Services, or perhaps even just using a more powerful home computer.
 
 The last recommendation would be to continually maintain the dataset, as the USDA periodically updates the information stored in it. This could entail downloading the zip file when a new version comes out, or it could be linked to the API access port to continually update.
+
+## Sources
+
+The sources used throughout this project have been compiled below:
+
+1. https://data.nal.usda.gov/dataset/usda-branded-food-products-database
+2. https://energyeducation.ca/encyclopedia/Joule
+3. https://dietarysupplementdatabase.usda.nih.gov/ingredient_calculator/help.php
+4. https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?fr=101.9
+5. https://my.clevelandclinic.org/health/articles/4182-fat-and-calories
+6. https://www.ewg.org/foodscores/products/610563222087-SweetActionIceCreamBrownSugarBananaBrownSugarBanana
+7. https://www.instacart.com/giant/products/17900558-kitchens-seafood-shoreline-feast-mussels-clams-shrimp-sausage-and-veggies-in-a-flavorful-broth-4-lb
+8. https://www.nutritionvalue.org/Spices%2C_chili_powder_nutritional_value.html
+9. https://www.instacart.com/town-and-country/products/3344349-tapatio-spice-packet-8-ct
+10. https://fortune.com/global500/2019/
+11. https://www.sciencedirect.com/science/article/pii/B9781845690182500088
+12. https://www.ncbi.nlm.nih.gov/pubmed/3863796
+13. https://www.sciencedaily.com/terms/citric_acid.htm
