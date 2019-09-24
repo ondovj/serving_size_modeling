@@ -68,6 +68,7 @@ The last recommendation would be to continually maintain the dataset, as the USD
 The sources used throughout this project have been compiled below:
 
 1. https://data.nal.usda.gov/dataset/usda-branded-food-products-database
+2. https://www.fda.gov/media/102587/download
 2. https://energyeducation.ca/encyclopedia/Joule
 3. https://dietarysupplementdatabase.usda.nih.gov/ingredient_calculator/help.php
 4. https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?fr=101.9
