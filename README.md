@@ -1,5 +1,7 @@
 # Modeling Food Serving Sizes Through Nutrition Profiles
 
+You can now read the article detailing this project, published in Towards Data Science : https://towardsdatascience.com/predicting-food-serving-sizes-with-a-feed-forward-neural-network-2d8d40d82f72
+
 ## Problem Statement
 
 Creating a new food product is a long and complex process. One of the many difficult determinations is establishing the portion size of the food. As a starting point, there are strict guidelines set by the FDA for typicaly amounts consumed for many types of foods, called the Reference Amounts Customarily Consumed, or RACC. However, there can still be much variation in the final products, accounting for difference in packaging, densities, and many other factors. To this end, it could be helpful for developers to have a model that can predict the serving size of a food, based on other foods that have similar profiles.
